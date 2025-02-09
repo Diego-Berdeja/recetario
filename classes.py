@@ -1,3 +1,4 @@
+########################################################################################################################
 class Ingredient:
     """Class for ingredients. Essentially a dictionary. Contains grams per unit, calories per unit,
     and a list of category keywords."""
@@ -8,6 +9,11 @@ class Ingredient:
         self.calories = calories
         self.category = category
 
+
+
+
+
+########################################################################################################################
 class Recipe:
     """Class for a recipe."""
 
@@ -22,6 +28,22 @@ class Recipe:
         self.ingredient_list.append(ingredient)
         print(f'\'{ingredient.name}\' added to \'{self.name}\'.')
 
+    def list_ingredients(self):
+        for item in self.ingredient_list:
+            if item[1] == 'p':
+                print(f'{item[0]} pieces of {item[2].lower()}.')
+            else:
+                print(f'{item[0]} grams of {item[2].lower()}')
+
+    def total_calories(self):
+        pass
+
+
+
+
+
+
+########################################################################################################################
 class Recetario:
     """Class for recipe book."""
 
