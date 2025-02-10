@@ -1,4 +1,6 @@
 from classes import Ingredient, Recipe, Recetario
+from PyQt6 import QtWidgets
+
 import random, pickle, populator
 
 # Load ingredients, recipes, and recetarios from database files.
