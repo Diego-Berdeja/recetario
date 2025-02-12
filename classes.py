@@ -1,3 +1,11 @@
+from pathlib import Path
+import pickle
+########################################################################################################################
+
+
+
+
+
 ########################################################################################################################
 class Ingredient:
     """Class for ingredients. Essentially a dictionary. Contains grams per unit, calories per unit,
@@ -9,6 +17,7 @@ class Ingredient:
         self.grams = grams
         self.calories = calories
         self.category = category
+########################################################################################################################
 
 
 
@@ -61,7 +70,7 @@ class Recipe:
             new_item.calories = (new_serves / self.serves) * item.calories
             new_list.append(new_item)
         self.ingredient_list = new_list
-
+########################################################################################################################
 
 
 
@@ -70,42 +79,74 @@ class Recipe:
 ########################################################################################################################
 class Recetario:
     """Class for recipe book."""
-
-    def __init__(self, name: str, recipes: list, people: int):
+    def __init__(self, name: str, recipes: dict, people: int):
         self.name = name
         self.recipes = recipes
         self.people = people
 
     def list_recipes(self):
         for item in self.recipes:
-            print(f'{item.name}')
+            print(item)
 
-    def add_recipe(self, entry):
-        self.recipes.append(entry)
+    def add_recipe(self, entry: Recipe):
+        self.recipes[entry.name] = entry
         print(f'\'{entry.name}\' added to \'{self.name}\'.')
 
-    def remove_recipe(self, entry):
-        for item in self.recipes:
-            if entry.name == item.name:
-                self.recipes.remove(entry)
-                print(f'\'{item.name}\' removed from \'{self.name}\'.')
-                return 0
+    def remove_recipe(self, entry: Recipe):
+        try:
+            self.recipes.pop(entry.name.lower())
+            print(f'\'{entry.name}\' removed from \'{self.name}\'.')
+        except:
             print(f'No entries matching \'{entry.name}\' found in {self.name}\'.')
 
     def rescale_all_recipes(self, new_serves: int):
-        new_list = []
-        for item in self.recipes:
-            new_recipe = item
-            new_recipe.rescale_recipe(new_serves=new_serves)
-            new_list.append(new_recipe)
+        new_list = {}
+        for key, value in self.recipes.items():
+            new_list[key] = value
+            new_list[key].rescale_recipe(new_serves=new_serves)
         self.recipes = new_list
+########################################################################################################################
+
 
 
 
 ########################################################################################################################
-class Wizard(Recipe, Recetario):
+class Wizard(Recetario):
     """Recetario, recipe, and ingredient editor."""
-    def __init__(self, master_ingredients: Recipe, master_recipes: Recetario):
-        Recipe.__init__(self, name='master', serves=1, ingredient_list=master_ingredients.ingredient_list,
-                        category=['master'],complexity='master')
+    def __init__(self, master_recipes: Recetario):
         Recetario.__init__(self, name='master', recipes=master_recipes.recipes, people=1)
+########################################################################################################################
+
+
+
+
+
+########################################################################################################################
+def populator():
+    # We define a few basic Ingredient instances.
+    apple = Ingredient(name='Apple', pieces=1, grams=150, calories=52, category=['fruit'])
+    pear = Ingredient(name='Pear', pieces=1, grams=150, calories=100, category=['fruit'])
+    # We define a few basic Recipe instances.
+    caramelised_pears = Recipe(name='Caramelised Pears',
+                               serves=2,
+                               ingredient_list=[Ingredient(name='Pear', pieces=2, grams=300, calories=200,
+                                                           category=['fruit'])], category=[], complexity='')
+    caramelised_apples = Recipe(name='Caramelised Apples',
+                                serves=2,
+                                ingredient_list=[Ingredient(name='Apple', pieces=2, grams=300, calories=104,
+                                                            category=['fruit'])], category=[], complexity='')
+
+    # We create and populate a Recipe instance to use as a master collection of ingredients.
+    ingredient_master = Recipe(name='master', serves=1, ingredient_list=[], category=[], complexity='')
+    ingredient_master.add_ingredient(apple)
+    ingredient_master.add_ingredient(pear)
+    # We create and populate a Recetario instance to use as a master collection of recipes. We add the master list of
+    # ingredients.
+    recipe_master = Recetario(name='master', recipes={}, people=1)
+    recipe_master.add_recipe(ingredient_master)
+    recipe_master.add_recipe(caramelised_pears)
+    recipe_master.add_recipe(caramelised_apples)
+    # We pickle the master Recetario into a master file.
+    with open('master.pickle', 'wb') as file:
+        # noinspection PyTypeChecker
+        pickle.dump(recipe_master, file)
