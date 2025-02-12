@@ -85,7 +85,7 @@ class Recetario:
 ########################################################################################################################
 class Wizard(Recipe, Recetario):
     """Recetario, recipe, and ingredient editor."""
-    def __init__(self, master_ingredients: list, master_recipes: list):
-        Recipe.__init__(self, name='master', serves=1, ingredient_list=master_ingredients, category='master',
+    def __init__(self, master_ingredients: Recipe, master_recipes: Recetario):
+        Recipe.__init__(self, name='master', serves=1, ingredient_list=master_ingredients.ingredient_list, category='master',
                         complexity='master')
-        Recetario.__init__(self, name='master', recipes=master_recipes, people=1)
+        Recetario.__init__(self, name='master', recipes=master_recipes.recipes, people=1)
