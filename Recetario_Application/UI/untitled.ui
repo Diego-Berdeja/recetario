@@ -1,82 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>main</class>
- <widget class="QMainWindow" name="main">
+ <class>win_main</class>
+ <widget class="QMainWindow" name="win_main">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>520</height>
+    <width>1050</width>
+    <height>450</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="font">
-   <font>
-    <family>Avenir</family>
-    <pointsize>12</pointsize>
-   </font>
   </property>
   <property name="windowTitle">
    <string>Recetario</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="wi_output" native="true">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>651</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QWidget" name="wi_title" native="true">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="la_title">
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>30</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Welcome!</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+   <property name="font">
+    <font>
+     <family>Avenir</family>
+     <pointsize>36</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Recetario</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Welcome! and morphs into indications depending on context.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Avenir</family>
+           <pointsize>12</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>This is where the output will be.</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Create Recetario</string>
+       </attribute>
       </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QWidget" name="wi_subtitle" native="true">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLabel" name="la_subtitle">
-          <property name="text">
-           <string>What would you like to do?</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>View Ingredient List</string>
+       </attribute>
       </widget>
-     </item>
-    </layout>
-   </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>618</width>
+     <width>1050</width>
      <height>36</height>
     </rect>
    </property>
