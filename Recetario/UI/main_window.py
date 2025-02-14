@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'main_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -15,15 +15,24 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGroupBox, QLabel, QMainWindow,
-    QMenuBar, QSizePolicy, QSpacerItem, QStatusBar,
+from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QLabel,
+    QMainWindow, QMenuBar, QSizePolicy, QStatusBar,
     QTabWidget, QVBoxLayout, QWidget)
+import icons_rc
 
 class Ui_win_main(object):
     def setupUi(self, win_main):
         if not win_main.objectName():
             win_main.setObjectName(u"win_main")
-        win_main.resize(1050, 450)
+        win_main.resize(702, 674)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(win_main.sizePolicy().hasHeightForWidth())
+        win_main.setSizePolicy(sizePolicy)
+        icon = QIcon()
+        icon.addFile(u":/Main/witch-hat.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        win_main.setWindowIcon(icon)
         self.centralwidget = QWidget(win_main)
         self.centralwidget.setObjectName(u"centralwidget")
         font = QFont()
@@ -42,20 +51,34 @@ class Ui_win_main(object):
         font1.setBold(False)
         font1.setItalic(False)
         self.box_output.setFont(font1)
-        self.verticalLayout_2 = QVBoxLayout(self.box_output)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.la_title = QLabel(self.box_output)
-        self.la_title.setObjectName(u"la_title")
-        self.la_title.setFont(font)
+        self.gridLayout = QGridLayout(self.box_output)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.label_title = QLabel(self.box_output)
+        self.label_title.setObjectName(u"label_title")
+        self.label_title.setFont(font)
 
-        self.verticalLayout_2.addWidget(self.la_title)
+        self.gridLayout.addWidget(self.label_title, 0, 0, 1, 1)
+
+        self.label_subtitle = QLabel(self.box_output)
+        self.label_subtitle.setObjectName(u"label_subtitle")
+
+        self.gridLayout.addWidget(self.label_subtitle, 1, 0, 1, 1)
 
 
         self.verticalLayout.addWidget(self.box_output)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.gridLayout_2 = QGridLayout(self.widget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
 
-        self.verticalLayout.addItem(self.verticalSpacer)
+        self.verticalLayout.addWidget(self.widget)
+
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
+        self.label.setPixmap(QPixmap(u":/Main/witch-hat.png"))
+
+        self.verticalLayout.addWidget(self.label)
 
         self.tab_input = QTabWidget(self.centralwidget)
         self.tab_input.setObjectName(u"tab_input")
@@ -72,7 +95,7 @@ class Ui_win_main(object):
         win_main.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(win_main)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1050, 36))
+        self.menubar.setGeometry(QRect(0, 0, 702, 36))
         win_main.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(win_main)
         self.statusbar.setObjectName(u"statusbar")
@@ -89,7 +112,9 @@ class Ui_win_main(object):
     def retranslateUi(self, win_main):
         win_main.setWindowTitle(QCoreApplication.translate("win_main", u"Recetario", None))
         self.box_output.setTitle(QCoreApplication.translate("win_main", u"Recetario", None))
-        self.la_title.setText(QCoreApplication.translate("win_main", u"Title", None))
+        self.label_title.setText(QCoreApplication.translate("win_main", u"Title", None))
+        self.label_subtitle.setText(QCoreApplication.translate("win_main", u"Subtitle", None))
+        self.label.setText("")
         self.tab_input.setTabText(self.tab_input.indexOf(self.tab_rec), QCoreApplication.translate("win_main", u"Recetario", None))
         self.tab_input.setTabText(self.tab_input.indexOf(self.tab_ing), QCoreApplication.translate("win_main", u"Ingredient database", None))
     # retranslateUi
