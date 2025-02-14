@@ -1,8 +1,8 @@
 from classes import Ingredient, Recipe, Recetario, Wizard, populator
 from pathlib import Path
-from PyQt6 import QtWidgets
+from PySide6 import QtWidgets
 
-import random, pickle
+import pickle
 
 def main():
     populator()

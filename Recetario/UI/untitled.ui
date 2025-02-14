@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
-    <height>450</height>
+    <width>692</width>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Recetario</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Icons/icons.qrc">
+    <normaloff>:/Main/witch-hat.png</normaloff>:/Main/witch-hat.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="font">
@@ -24,34 +28,52 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="box_output">
+      <property name="font">
+       <font>
+        <family>Avenir</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="title">
        <string>Recetario</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Welcome! and morphs into indications depending on context.</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="la_title">
          <property name="font">
           <font>
            <family>Avenir</family>
-           <pointsize>12</pointsize>
+           <pointsize>36</pointsize>
            <italic>false</italic>
            <bold>false</bold>
           </font>
          </property>
          <property name="text">
-          <string>This is where the output will be.</string>
+          <string>Title</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="la_subtitle">
+         <property name="text">
+          <string>Subtitle</string>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="la_wizard">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item>
@@ -62,24 +84,32 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>40</height>
+        <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
     <item>
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>1</number>
+     <widget class="QTabWidget" name="tab_input">
+      <property name="font">
+       <font>
+        <family>Avenir</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
       </property>
-      <widget class="QWidget" name="tab">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_rec">
        <attribute name="title">
-        <string>Create Recetario</string>
+        <string>Recetario</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tab_ing">
        <attribute name="title">
-        <string>View Ingredient List</string>
+        <string>Ingredient database</string>
        </attribute>
       </widget>
      </widget>
@@ -91,13 +121,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1050</width>
+     <width>692</width>
      <height>36</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,7 +11,7 @@ class Ingredient:
     """Class for ingredients. Essentially a dictionary. Contains grams per unit, calories per unit,
     and a list of category keywords."""
 
-    def __init__(self, name: str, pieces: int, grams: float, calories: float, category: list):
+    def __init__(self, name: str, pieces: int = 1, grams: float = 1, calories: float = 1, category: list = []):
         self.name = name
         self.pieces = pieces
         self.grams = grams
@@ -27,7 +27,7 @@ class Ingredient:
 class Recipe:
     """Class for a recipe."""
 
-    def __init__(self, name: str, serves: int, ingredient_list: list, category: list, complexity: str):
+    def __init__(self, name: str, serves: int = 1, ingredient_list: list = [], category: list = [], complexity: str = ''):
         self.name = name
         self.serves = serves
         self.ingredient_list = ingredient_list
@@ -79,7 +79,7 @@ class Recipe:
 ########################################################################################################################
 class Recetario:
     """Class for recipe book."""
-    def __init__(self, name: str, recipes: dict, people: int):
+    def __init__(self, name: str, recipes: dict = {}, people: int = 1):
         self.name = name
         self.recipes = recipes
         self.people = people
@@ -137,12 +137,12 @@ def populator():
                                                             category=['fruit'])], category=[], complexity='')
 
     # We create and populate a Recipe instance to use as a master collection of ingredients.
-    ingredient_master = Recipe(name='master', serves=1, ingredient_list=[], category=[], complexity='')
+    ingredient_master = Recipe(name='master')
     ingredient_master.add_ingredient(apple)
     ingredient_master.add_ingredient(pear)
     # We create and populate a Recetario instance to use as a master collection of recipes. We add the master list of
     # ingredients.
-    recipe_master = Recetario(name='master', recipes={}, people=1)
+    recipe_master = Recetario(name='master')
     recipe_master.add_recipe(ingredient_master)
     recipe_master.add_recipe(caramelised_pears)
     recipe_master.add_recipe(caramelised_apples)
