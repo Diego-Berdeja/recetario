@@ -121,6 +121,7 @@ class MainWindow(qtw.QMainWindow, Ui_mw_main_window): # Defines a new class base
         super().__init__() # Note Ui_win_main has no initializer: only two functions.
         self.setupUi(self) # setupUI() is one of them: it sets up the MainWindow UI, which inherits from the QMainWindow class.
         self.recipes = self.load_from_file() # We unpickle database into Recetario object.
+        self.display_ingredient_list(self.recipes.recipes['master'].ingredient_list)
 
     @qtc.Slot()
     def save_to_file(self, recipes: Recetario, name='master.pickle'):
@@ -138,6 +139,16 @@ class MainWindow(qtw.QMainWindow, Ui_mw_main_window): # Defines a new class base
         except:
             print(f'File \'{name}\' not found.')
             return Recetario('master')
+
+    @qtc.Slot()
+    def display_ingredient_list(self, ingredient_list: list):
+        # self.table_ingredients.clear()
+        row = 0
+        self.table_ingredients.setRowCount(len(ingredient_list))
+        for ingredient in ingredient_list:
+            self.table_ingredients.setItem(row, 0, qtw.QTableWidgetItem(str(ingredient.name)))
+            print(f'row: {row}, ingredient: {ingredient.name}')
+            row += 1
 ########################################################################################################################
 
 

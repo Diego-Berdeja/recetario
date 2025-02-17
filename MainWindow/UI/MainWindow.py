@@ -75,6 +75,9 @@ class Ui_mw_main_window(object):
 
         self.gridLayout.addWidget(self.label_subtitle, 1, 0, 1, 1)
 
+        self.label_title.raise_()
+        self.label_subtitle.raise_()
+        self.label_pic.raise_()
 
         self.gridLayout_2.addWidget(self.w_output, 0, 0, 1, 1)
 
