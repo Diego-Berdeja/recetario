@@ -1,5 +1,7 @@
-from pathlib import Path
-import pickle
+import sys, pickle
+from PySide6 import QtCore as qtc
+from PySide6 import QtWidgets as qtw
+from PySide6 import QtGui as qtg
 ########################################################################################################################
 
 
@@ -115,6 +117,11 @@ class Wizard(Recetario):
     """Recetario, recipe, and ingredient editor."""
     def __init__(self, master_recipes: Recetario):
         Recetario.__init__(self, name='master', recipes=master_recipes.recipes, people=1)
+        self.load_ingredient_list(master_ingredients=master_recipes.recipes['master'])
+
+    @qtc.Slot()
+    def load_ingredient_list(self, master_ingredients: Recipe):
+        self.
 ########################################################################################################################
 
 

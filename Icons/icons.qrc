@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Main">
+    <file>witch-hat_small.png</file>
     <file>witch-hat.png</file>
   </qresource>
   <qresource prefix="Buttons"/>
