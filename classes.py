@@ -108,7 +108,7 @@ class Recetario:
         try:
             self.recipes.pop(entry.name.lower())
             print(f'\'{entry.name}\' removed from \'{self.name}\'.')
-        except:
+        except FileNotFoundError:
             print(f'No entries matching \'{entry.name}\' found in {self.name}\'.')
 
     def rescale_all_recipes(self, new_serves: int):
@@ -144,7 +144,7 @@ class MainWindow(qtw.QMainWindow, Ui_mw_main_window): # Defines a new class base
             with open(name, 'rb') as file:
                 # noinspection PyTypeChecker
                  return pickle.load(file)
-        except:
+        except FileNotFoundError:
             print(f'File \'{name}\' not found.')
             return Recetario('master')
 
