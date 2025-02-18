@@ -38,32 +38,40 @@ class Recipe:
         self.category = category
         self.complexity = complexity
 
+        self.output_signal=qtc.Signal()
+
     def list_ingredients(self):
+        output = []
         for item in self.ingredient_list:
             if item.pieces > 20:
                 if int(item.grams) == 1:
-                    print(f'{int(item.grams)} gram of {item.name.lower()}.')
+                    output.append(f'{int(item.grams)} gram of {item.name.lower()}.')
                 else:
-                    print(f'{int(item.grams)} grams of {item.name.lower()}.')
+                    output.append(f'{int(item.grams)} grams of {item.name.lower()}.')
             else:
                 if round(item.pieces,1) == 1:
-                    print(f'{round(item.pieces,1)} {item.name.lower()}.')
+                    output.append(f'{round(item.pieces,1)} {item.name.lower()}.')
                 else:
-                    print(f'{round(item.pieces,1)} pieces of {item.name.lower()}.')
+                    output.append(f'{round(item.pieces,1)} pieces of {item.name.lower()}.')
+        self.output_signal.emit(output)
 
     def add_ingredient(self, ingredient: Ingredient):
+        output = []
         if ingredient not in self.ingredient_list:
             self.ingredient_list.append(ingredient)
-            print(f'\'{ingredient.name}\' added to \'{self.name}\'.')
+            output.append(f'\'{ingredient.name}\' added to \'{self.name}\'.')
         else:
-            print(f'\'{ingredient.name}\' already listed in \'{self.name}\'.')
+            output.append(f'\'{ingredient.name}\' already listed in \'{self.name}\'.')
+        self.output_signal.emit(output)
 
     def remove_ingredient(self, ingredient: Ingredient):
+        output = []
         if ingredient in self.ingredient_list:
             self.ingredient_list.remove(ingredient)
-            print(f'\'{ingredient.name}\' removed from \'{self.name}\'.')
+            output.append(f'\'{ingredient.name}\' removed from \'{self.name}\'.')
         else:
-            print(f'\'{ingredient.name}\' not listed in \'{self.name}\'.')
+            output.append(f'\'{ingredient.name}\' not listed in \'{self.name}\'.')
+        self.output_signal.emit(output)
 
     def rescale_recipe(self, new_serves: int):
         new_list = []
