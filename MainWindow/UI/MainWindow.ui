@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>809</width>
-    <height>500</height>
+    <width>792</width>
+    <height>528</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -69,6 +69,95 @@
     </font>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tab_input">
+      <property name="font">
+       <font>
+        <family>Avenir</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_ingredients">
+       <attribute name="title">
+        <string>Ingredients</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="2">
+            <widget class="QWidget" name="widget_2" native="true"/>
+           </item>
+           <item row="0" column="3">
+            <widget class="QWidget" name="widget_3" native="true"/>
+           </item>
+           <item row="1" column="0" colspan="4">
+            <widget class="QTableWidget" name="table_ingredients">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::NoFrame</enum>
+             </property>
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Grams Per Unit</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Calories Per Unit</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Category</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="pb_edit">
+             <property name="text">
+              <string>Edit</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_recipes">
+       <attribute name="title">
+        <string>Recipes</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QWidget" name="w_output" native="true">
       <property name="font">
@@ -108,16 +197,6 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_pic">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../Icons/icons.qrc">:/Main/witch-hat_small.png</pixmap>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_subtitle">
          <property name="text">
@@ -126,66 +205,6 @@
         </widget>
        </item>
       </layout>
-      <zorder>label_title</zorder>
-      <zorder>label_subtitle</zorder>
-      <zorder>label_pic</zorder>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QTabWidget" name="tab_input">
-      <property name="font">
-       <font>
-        <family>Avenir</family>
-        <pointsize>12</pointsize>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="tab_ingredients">
-       <attribute name="title">
-        <string>Ingredients</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QTableWidget" name="table_ingredients">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
-          </property>
-          <column>
-           <property name="text">
-            <string>Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Grams Per Unit</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Calories Per Unit</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Category</string>
-           </property>
-          </column>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_recipes">
-       <attribute name="title">
-        <string>Recipes</string>
-       </attribute>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -195,7 +214,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>809</width>
+     <width>792</width>
      <height>36</height>
     </rect>
    </property>
