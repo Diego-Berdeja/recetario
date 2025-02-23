@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>283</width>
+    <width>287</width>
     <height>582</height>
    </rect>
   </property>
@@ -20,170 +20,7 @@
    <string>Property Editor</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="2">
-    <widget class="QWidget" name="widget_buttons" native="true">
-     <layout class="QFormLayout" name="formLayout">
-      <property name="labelAlignment">
-       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
-      </property>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="name">
-        <property name="text">
-         <string> Name</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QRadioButton" name="calories">
-        <property name="text">
-         <string>Calories</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QRadioButton" name="carbohydrates">
-        <property name="text">
-         <string>Carbohydrates</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QRadioButton" name="cholesterol">
-        <property name="text">
-         <string>Cholesterol</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QRadioButton" name="fibre">
-        <property name="text">
-         <string>Fibre</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QRadioButton" name="protein">
-        <property name="text">
-         <string>Protein</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QRadioButton" name="sugar">
-        <property name="text">
-         <string>Sugar</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QRadioButton" name="total_fat">
-        <property name="text">
-         <string>Total Fat</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QRadioButton" name="monosaturated_fat">
-        <property name="text">
-         <string>Mono-saturated Fat</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="0">
-       <widget class="QRadioButton" name="polysaturated_fat">
-        <property name="text">
-         <string>Poly-saturated Fat</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="0">
-       <widget class="QRadioButton" name="saturated_fat">
-        <property name="text">
-         <string>Saturated Fat</string>
-        </property>
-       </widget>
-      </item>
-      <item row="12" column="0">
-       <widget class="QRadioButton" name="calcium">
-        <property name="text">
-         <string>Calcium</string>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="0">
-       <widget class="QRadioButton" name="iron">
-        <property name="text">
-         <string>Iron</string>
-        </property>
-       </widget>
-      </item>
-      <item row="14" column="0">
-       <widget class="QRadioButton" name="potassium">
-        <property name="text">
-         <string>Potassium</string>
-        </property>
-       </widget>
-      </item>
-      <item row="15" column="0">
-       <widget class="QRadioButton" name="sodium">
-        <property name="text">
-         <string>Sodium</string>
-        </property>
-       </widget>
-      </item>
-      <item row="16" column="0">
-       <widget class="QRadioButton" name="vitamin_a">
-        <property name="text">
-         <string>Vitamin A</string>
-        </property>
-       </widget>
-      </item>
-      <item row="17" column="0">
-       <widget class="QRadioButton" name="vitamin_b12">
-        <property name="text">
-         <string>Vitamin B12</string>
-        </property>
-       </widget>
-      </item>
-      <item row="18" column="0">
-       <widget class="QRadioButton" name="vitamin_b6">
-        <property name="text">
-         <string>Vitamin B6</string>
-        </property>
-       </widget>
-      </item>
-      <item row="19" column="0">
-       <widget class="QRadioButton" name="vitamin_c">
-        <property name="text">
-         <string>Vitamin C</string>
-        </property>
-       </widget>
-      </item>
-      <item row="20" column="0">
-       <widget class="QRadioButton" name="vitamin_e">
-        <property name="text">
-         <string>Vitamin E</string>
-        </property>
-       </widget>
-      </item>
-      <item row="21" column="0">
-       <widget class="QRadioButton" name="vitamin_k">
-        <property name="text">
-         <string>Vitamin K</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Properties:</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="1">
+   <item row="1" column="1">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Orientation::Vertical</enum>
@@ -191,6 +28,177 @@
      <property name="standardButtons">
       <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QWidget" name="widget" native="true"/>
+   </item>
+   <item row="0" column="0" rowspan="3">
+    <widget class="QWidget" name="widget_buttons" native="true">
+     <layout class="QFormLayout" name="formLayout">
+      <property name="labelAlignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>30</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Properties:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
+       <widget class="QCheckBox" name="calcium">
+        <property name="text">
+         <string>Calcium</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="fibre">
+        <property name="text">
+         <string>Fibre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="calories">
+        <property name="text">
+         <string>Calories</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="carbohydrates">
+        <property name="text">
+         <string>Carbohydrates</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="cholesterol">
+        <property name="text">
+         <string>Cholesterol</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QCheckBox" name="iron">
+        <property name="text">
+         <string>Iron</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QCheckBox" name="monosaturated_fat">
+        <property name="text">
+         <string>Mono-saturated Fat</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="name">
+        <property name="text">
+         <string> Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QCheckBox" name="polysaturated_fat">
+        <property name="text">
+         <string>Poly-saturated Fat</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="0">
+       <widget class="QCheckBox" name="potassium">
+        <property name="text">
+         <string>Potassium</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="protein">
+        <property name="text">
+         <string>Protein</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QCheckBox" name="saturated_fat">
+        <property name="text">
+         <string>Saturated Fat</string>
+        </property>
+       </widget>
+      </item>
+      <item row="15" column="0">
+       <widget class="QCheckBox" name="sodium">
+        <property name="text">
+         <string>Sodium</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QCheckBox" name="sugar">
+        <property name="text">
+         <string>Sugar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QCheckBox" name="total_fat">
+        <property name="text">
+         <string>Total Fat</string>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="0">
+       <widget class="QCheckBox" name="vitamin_a">
+        <property name="text">
+         <string>Vitamin A</string>
+        </property>
+       </widget>
+      </item>
+      <item row="17" column="0">
+       <widget class="QCheckBox" name="vitamin_b12">
+        <property name="text">
+         <string>Vitamin B12</string>
+        </property>
+       </widget>
+      </item>
+      <item row="18" column="0">
+       <widget class="QCheckBox" name="vitamin_b6">
+        <property name="text">
+         <string>Vitamin B6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="19" column="0">
+       <widget class="QCheckBox" name="vitamin_c">
+        <property name="text">
+         <string>Vitamin C</string>
+        </property>
+       </widget>
+      </item>
+      <item row="20" column="0">
+       <widget class="QCheckBox" name="vitamin_e">
+        <property name="text">
+         <string>Vitamin E</string>
+        </property>
+       </widget>
+      </item>
+      <item row="21" column="0">
+       <widget class="QCheckBox" name="vitamin_k">
+        <property name="text">
+         <string>Vitamin K</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
